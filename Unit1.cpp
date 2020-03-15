@@ -234,8 +234,6 @@ void __fastcall TForm1::resetClick(TObject *Sender)
         barrier2Speed = 3;
         corona->Left = 472;
         corona->Top =  384;
-        x = 8;
-        y = -2;
         nextRound->Visible = false;
         mainTimer -> Enabled = true;
         reset -> Visible = false;
