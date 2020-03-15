@@ -119,7 +119,8 @@ void __fastcall TForm1::mainTimerTimer(TObject *Sender)
     if (corona->Left <= block2->Left || corona->Left <= block1->Left){
         mainTimer -> Enabled = false;
         userPoints += 1;
-        if (userPoints == 2){
+        setScore(score, coronaPoints, userPoints);
+        if (userPoints == 3){
                 winner->Caption = "GRATULACJE! Udalo Ci sie pokonac wirusa!";
                 winner -> Visible = true;
                 reset -> Visible = true;
@@ -136,6 +137,7 @@ void __fastcall TForm1::mainTimerTimer(TObject *Sender)
     if (corona->Left + corona->Width > paddle->Left + 10){
         mainTimer -> Enabled = false;
         coronaPoints += 1;
+        setScore(score, coronaPoints, userPoints);
         if (coronaPoints == 3){
                 winner->Caption = "PORA¯KA! CoronaVirus zainfekowa³ Twój kraj!";
                 winner -> Visible = true;
