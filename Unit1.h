@@ -29,6 +29,10 @@ __published:	// IDE-managed Components
         TLabel *winner;
         TButton *zakoncz;
         TButton *kontynuacja;
+        TButton *mode1;
+        TButton *mode3;
+        TButton *mode2;
+        TLabel *Label1;
         void __fastcall mainTimerTimer(TObject *Sender);
         void __fastcall nextRoundClick(TObject *Sender);
         void __fastcall zakonczClick(TObject *Sender);
@@ -40,6 +44,9 @@ __published:	// IDE-managed Components
           TShiftState Shift);
         void __fastcall resetClick(TObject *Sender);
         void __fastcall kontynuacjaClick(TObject *Sender);
+        void __fastcall mode1Click(TObject *Sender);
+        void __fastcall mode2Click(TObject *Sender);
+        void __fastcall mode3Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
         __fastcall TForm1(TComponent* Owner);

@@ -8,8 +8,8 @@
 #pragma package(smart_init)
 #pragma resource "*.dfm"
 TForm1 *Form1;
-int x = 8;
-int y = -4;
+int x;
+int y;
 int userPoints = 0;
 int coronaPoints = 0;
 int barrier1Speed = 3;
@@ -163,10 +163,8 @@ void __fastcall TForm1::mainTimerTimer(TObject *Sender)
 
 void __fastcall TForm1::nextRoundClick(TObject *Sender)
 {
-        corona->Left = 472;
-        corona->Top =  384;
-        x = 8;
-        y = -4;
+        corona->Left = 150;
+        corona->Top =  300;
         nextRound->Visible = false;
         mainTimer -> Enabled = true;
         reset -> Visible = false;
@@ -226,19 +224,22 @@ void __fastcall TForm1::FormKeyUp(TObject *Sender, WORD &Key,
 
 void __fastcall TForm1::resetClick(TObject *Sender)
 {
-        x = 8;
-        y = -4;
         userPoints = 0;
         coronaPoints = 0;
         barrier1Speed = 3;
         barrier2Speed = 3;
-        corona->Left = 472;
-        corona->Top =  384;
+        corona->Left = 150;
+        corona->Top =  300;
         nextRound->Visible = false;
         mainTimer -> Enabled = true;
         reset -> Visible = false;
         zakoncz -> Visible = false;
         winner->Visible = false;
+        mainTimer->Enabled = false;
+        Label1->Visible = true;
+        mode1->Visible = true;
+        mode2->Visible = true;
+        mode3->Visible = true;
         setScore(score, coronaPoints, userPoints);
 }
 //---------------------------------------------------------------------------
@@ -250,4 +251,46 @@ void __fastcall TForm1::kontynuacjaClick(TObject *Sender)
         zakoncz -> Visible = false;
 }
 //---------------------------------------------------------------------------
+
+
+
+
+void __fastcall TForm1::mode1Click(TObject *Sender)
+{
+  y = -4;
+  x = -4;
+  Label1->Visible = false;
+  mainTimer->Enabled = true;
+  mode1->Visible = false;
+  mode2->Visible = false;
+  mode3->Visible = false;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::mode2Click(TObject *Sender)
+{
+  y = -6;
+  x = -6;
+  Label1->Visible = false;
+  mainTimer->Enabled = true;
+  mode1->Visible = false;
+  mode2->Visible = false;
+  mode3->Visible = false;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::mode3Click(TObject *Sender)
+{
+  y = -8;
+  x = -8;
+  Label1->Visible = false;
+  mainTimer->Enabled = true;
+  mode1->Visible = false;
+  mode2->Visible = false;
+  mode3->Visible = false;
+
+}
+//---------------------------------------------------------------------------
+
+
 
